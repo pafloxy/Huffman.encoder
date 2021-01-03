@@ -79,13 +79,17 @@ def huffman_text_decoder(entxt,dic):
   " Input the encoded Text #entxt and the corresponding Dictionary #dic to obtain the decoded text "
   dtxt = ""
   cd = ""
-  for _ in range(len(entxt)):   
+  _ = 0
+  while _< len(entxt) :   
     if cd in dic.values():
       phrase = key_finder(dic,cd)
       dtxt = dtxt + phrase
+     # print('*'+dtxt+'|'+str(_))
       cd = ""
     else :
-      cd = cd + entxt[_]  
+      cd = cd + entxt[_] 
+     # print(cd+'|'+str(_))
+      _ = _ + 1
   return dtxt    
       
     
